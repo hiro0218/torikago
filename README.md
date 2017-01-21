@@ -1,4 +1,4 @@
-# minitwi
+# torikago
 
 > A simple Twitter client.
 
