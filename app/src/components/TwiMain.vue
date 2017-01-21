@@ -6,7 +6,7 @@
 </style>
 
 <template>
- <webview id="webview"></webview>
+  <webview id="webview"></webview>
 </template>
 
 <script>
@@ -15,28 +15,42 @@
   var browserWindow = remote.BrowserWindow
   var focusedWindow = browserWindow.getFocusedWindow()
 
-  window.addEventListener('load', function() {
-    var webview = document.getElementById('webview');
-    webview.setAttribute('src', 'https://mobile.twitter.com/home');
+  export default {
+    name: 'twi-main',
+    mounted () {
+      this.startWebview();
+    },
+    methods: {
+      startWebview: function() {
+        var self = this;
+        var webview = document.getElementById('webview');
 
-    // 外部リンクをブラウザで開く
-    webview.addEventListener('new-window', function(e) {
-      // リンクを背面で表示する
-      focusedWindow.setAlwaysOnTop(true);
-      setTimeout(() => { focusedWindow.setAlwaysOnTop(false) }, 1000);
+        window.addEventListener('load', function() {
+          webview.setAttribute('src', 'https://mobile.twitter.com/home');
+          self.setExternalLink(webview);
+          self.setStyle(webview);
+        }, false);
+      },
+      setExternalLink: function(webview) {
+        webview.addEventListener('new-window', function(e) {
+          // リンクを背面で表示する
+          focusedWindow.setAlwaysOnTop(true);
+          setTimeout(() => { focusedWindow.setAlwaysOnTop(false) }, 1000);
 
-      shell.openExternal(e.url);
-    });
-
-    // webview内に対するスタイル
-    var style = `
-    html {
-      font-family: -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
+          // 外部リンクをブラウザで開く
+          shell.openExternal(e.url);
+        });
+      },
+      setStyle: function(webview) {
+        // webview 内に対して、スタイルをセットする
+        webview.addEventListener('did-finish-load', function() {
+          this.insertCSS(`
+            html {
+              font-family: -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
+            }
+          `);
+        });
+      }
     }
-    `;
-
-    webview.insertCSS(style);
-
-  }, false);
-
+  }
 </script>
