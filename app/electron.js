@@ -78,6 +78,14 @@ function createMenu () {
   }, {
     label: 'Window',
     submenu: [{
+      label: 'Reload',
+      accelerator: 'CmdOrCtrl+R',
+      click: function (item, focusedWindow) {
+        focusedWindow.reload()
+      }
+    },
+    { type: 'separator' },
+    {
       label: 'Always on Top',
       accelerator: 'CmdOrCtrl+Shift+T',
       type: 'checkbox',
