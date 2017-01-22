@@ -3,7 +3,10 @@
 const electron = require('electron')
 const path = require('path')
 const app = electron.app
+const Menu = electron.Menu;
+const dialog = electron.dialog
 const BrowserWindow = electron.BrowserWindow
+const pkg = require('./package.json')
 
 let mainWindow
 let config = {}
@@ -46,7 +49,45 @@ function createWindow () {
     mainWindow = null
   })
 
+  createMenu()
+
   console.log('mainWindow opened')
+}
+
+function createMenu () {
+  const menu = Menu.buildFromTemplate([{
+    label: app.getName(),
+    submenu: [{
+      label: 'About This App',
+      click: function (item, focusedWindow) {
+        dialog.showMessageBox(focusedWindow, {
+          title: 'About',
+          type: 'none',
+          icon: path.join(__dirname, '/icons/icon.png'),
+          message: pkg.name + ' ' + pkg.version,
+          detail: pkg.copyright + " " + pkg.author + '\n\n' +
+          pkg.description + '\n\n' +
+          'Electron: ' + process.versions.electron + '\n' +
+          'Chrome: ' + process.versions.chrome + '\n' +
+          'Node.js: ' + process.versions.node +
+          'V8: ' + process.versions.v8 + '\n',
+          buttons: []
+        })
+      }
+    }]
+  }, {
+    label: 'Window',
+    submenu: [{
+      label: 'Always on Top',
+      accelerator: 'CmdOrCtrl+Shift+T',
+      type: 'checkbox',
+      checked: false,
+      click: function (item, focusedWindow) {
+        focusedWindow.setAlwaysOnTop(!focusedWindow.isAlwaysOnTop())
+      }
+    }]
+  }]);
+  Menu.setApplicationMenu(menu);
 }
 
 app.on('ready', createWindow)
