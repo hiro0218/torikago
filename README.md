@@ -2,6 +2,10 @@
 
 > A simple Twitter client.
 
+![screen shot](screenshot.png)
+
+---
+
 ## Build Setup
 
 ``` bash
