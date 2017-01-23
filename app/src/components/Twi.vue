@@ -11,17 +11,29 @@
 </template>
 
 <script>
-  var remote = require('electron').remote
-  var shell = remote.shell
-  var browserWindow = remote.BrowserWindow
-  var focusedWindow = browserWindow.getFocusedWindow()
+  var remote = require('electron').remote;
+  var shell = remote.shell;
+  var browserWindow = remote.BrowserWindow;
+  var focusedWindow = browserWindow.getFocusedWindow();
 
   export default {
-    name: 'twi-main',
+    name: 'twi',
     mounted () {
       this.startWebview();
     },
     methods: {
+      setMenuGoBack: function() {
+        var webview = document.getElementById('webview');
+        if (webview.canGoBack()) {
+          webview.goBack();
+        }
+      },
+      setMenuGoForward: function() {
+        var webview = document.getElementById('webview');
+        if (webview.canGoForward()) {
+          webview.goForward();
+        }
+      },
       startWebview: function() {
         var self = this;
         var webview = document.getElementById('webview');

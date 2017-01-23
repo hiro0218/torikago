@@ -3,16 +3,23 @@
 </style>
 
 <template>
- <twi-main></twi-main>
+ <twi ref="twi"></twi>
 </template>
 
 <script>
-  import TwiMain from './TwiMain'
+  import Twi from './Twi'
 
   export default {
+    name: 'view',
     components: {
-      TwiMain
+      Twi
     },
-    name: 'landing-page'
+    mounted() {
+      var menu = require('../../modules/menu.js');
+      var twi = this.$refs.twi;
+      menu.goBack = function() { twi.setMenuGoBack() };
+      menu.goForward = function() { twi.setMenuGoForward() };
+      menu.ready();
+    }
   }
 </script>
