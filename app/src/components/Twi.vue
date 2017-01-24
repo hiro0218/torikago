@@ -43,6 +43,11 @@
           self.setExternalLink(webview);
           self.setStyle(webview);
         }, false);
+
+        webview.addEventListener('dom-ready', function() {
+          self.openDevTools(webview);
+        }, false);
+
       },
       setExternalLink: function(webview) {
         webview.addEventListener('new-window', function(e) {
@@ -67,6 +72,11 @@
             }
           `);
         });
+      },
+      openDevTools: function(webview) {
+        if (process.env.NODE_ENV === 'development') {
+          webview.openDevTools();
+        }
       }
     }
   }
