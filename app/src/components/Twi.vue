@@ -60,6 +60,10 @@
           this.insertCSS(`
             html {
               font-family: -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
+              -webkit-font-smoothing: antialiased;
+            }
+            header[role=banner] > div:first-of-type:not(:only-of-type) {
+              display: none;
             }
           `);
         });
