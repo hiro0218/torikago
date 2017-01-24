@@ -38,11 +38,9 @@
         var self = this;
         var webview = document.getElementById('webview');
 
-        window.addEventListener('load', function() {
-          webview.setAttribute('src', 'https://mobile.twitter.com');
-          self.setExternalLink(webview);
-          self.setStyle(webview);
-        }, false);
+        webview.setAttribute('src', 'https://mobile.twitter.com');
+        self.setExternalLink(webview);
+        self.setStyle(webview);
 
         webview.addEventListener('dom-ready', function() {
           self.openDevTools(webview);
