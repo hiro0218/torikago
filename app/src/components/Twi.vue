@@ -100,6 +100,13 @@
             header[role=banner] > div:first-of-type:not(:only-of-type) {
               display: none;
             }
+            /* tweet */
+            div[data-testid="UserCell"] {
+              display: none !important;
+            }
+            textarea[data-testid="tweet-textarea"]::-webkit-input-placeholder {
+              opacity: 0;
+            }
           `);
         });
       },
