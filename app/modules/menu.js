@@ -89,6 +89,13 @@ module.exports = {
         click: function (item, focusedWindow) {
           self.goPage(4);
         }
+      },
+      { type: 'separator' },
+      {
+        label: 'Tweet',
+        click: function (item, focusedWindow) {
+          self.goPage(5);
+        }
       }]
     }, {
       label: 'Window',

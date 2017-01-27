@@ -21,7 +21,8 @@
     HOME: 'https://mobile.twitter.com',
     NOTICE: 'https://mobile.twitter.com/notifications',
     DM: 'https://mobile.twitter.com/messages',
-    SEARCH: 'https://mobile.twitter.com/search'
+    SEARCH: 'https://mobile.twitter.com/search',
+    TWEET: 'https://mobile.twitter.com/compose/tweet'
   }
 
   export default {
@@ -57,6 +58,9 @@
             break;
           case 4:
             webview.src = PAGE.SEARCH;
+            break;
+          case 5:
+            webview.src = PAGE.TWEET;
             break;
           default:
             webview.src = PAGE.DEFAULT;
