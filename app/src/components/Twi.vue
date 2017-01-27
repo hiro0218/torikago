@@ -47,19 +47,19 @@
 
         switch (page) {
           case 1:
-          webview.src = PAGE.HOME;
-          break;
+            webview.src = PAGE.HOME;
+            break;
           case 2:
-          webview.src = PAGE.NOTICE;
-          break;
+            webview.src = PAGE.NOTICE;
+            break;
           case 3:
-          webview.src = PAGE.DM;
-          break;
+            webview.src = PAGE.DM;
+            break;
           case 4:
-          webview.src = PAGE.SEARCH;
-          break;
+            webview.src = PAGE.SEARCH;
+            break;
           default:
-          webview.src = PAGE.DEFAULT;
+            webview.src = PAGE.DEFAULT;
         }
       },
       startWebview: function() {
