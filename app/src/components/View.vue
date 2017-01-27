@@ -19,6 +19,7 @@
       var twi = this.$refs.twi;
       menu.goBack = function() { twi.setMenuGoBack() };
       menu.goForward = function() { twi.setMenuGoForward() };
+      menu.goPage = function(page) { twi.setMenuGoPage(page) };
       menu.ready();
     }
   }

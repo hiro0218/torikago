@@ -16,6 +16,14 @@
   var browserWindow = remote.BrowserWindow;
   var focusedWindow = browserWindow.getFocusedWindow();
 
+  const PAGE = {
+    DEFAULT: 'https://mobile.twitter.com',
+    HOME: 'https://mobile.twitter.com',
+    NOTICE: 'https://mobile.twitter.com/notifications',
+    DM: 'https://mobile.twitter.com/messages',
+    SEARCH: 'https://mobile.twitter.com/search'
+  }
+
   export default {
     name: 'twi',
     mounted () {
@@ -34,11 +42,31 @@
           webview.goForward();
         }
       },
+      setMenuGoPage: function(page) {
+        var webview = document.getElementById('webview');
+
+        switch (page) {
+          case 1:
+          webview.src = PAGE.HOME;
+          break;
+          case 2:
+          webview.src = PAGE.NOTICE;
+          break;
+          case 3:
+          webview.src = PAGE.DM;
+          break;
+          case 4:
+          webview.src = PAGE.SEARCH;
+          break;
+          default:
+          webview.src = PAGE.DEFAULT;
+        }
+      },
       startWebview: function() {
         var self = this;
         var webview = document.getElementById('webview');
 
-        webview.setAttribute('src', 'https://mobile.twitter.com');
+        webview.src = PAGE.DEFAULT;
         self.setExternalLink(webview);
         self.setStyle(webview);
 

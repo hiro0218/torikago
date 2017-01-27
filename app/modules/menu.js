@@ -12,6 +12,7 @@ module.exports = {
   menubar: [],
   goBack: function() {},
   goForward: function() {},
+  goPage: function(page) {},
   ready: function() {
     var self = this;
 
@@ -65,6 +66,28 @@ module.exports = {
         accelerator: 'Cmd+Right',
         click: function (item, focusedWindow) {
           self.goForward();
+        }
+      },
+      { type: 'separator' },
+      {
+        label: 'Home',
+        click: function (item, focusedWindow) {
+          self.goPage(1);
+        }
+      }, {
+        label: 'Notifications',
+        click: function (item, focusedWindow) {
+          self.goPage(2);
+        }
+      }, {
+        label: 'Direct Message',
+        click: function (item, focusedWindow) {
+          self.goPage(3);
+        }
+      }, {
+        label: 'Search',
+        click: function (item, focusedWindow) {
+          self.goPage(4);
         }
       }]
     }, {
