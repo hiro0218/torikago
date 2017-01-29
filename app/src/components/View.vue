@@ -1,17 +1,29 @@
-<style scoped>
+<style>
+#view {
+  -webkit-app-region: drag;
 
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 </style>
 
 <template>
- <twi ref="twi"></twi>
+  <div id="view">
+    <titlebar></titlebar>
+    <twi ref="twi"></twi>
+  </div>
 </template>
 
 <script>
+  import Titlebar from './Titlebar'
   import Twi from './Twi'
 
   export default {
     name: 'view',
     components: {
+      Titlebar,
       Twi
     },
     mounted() {

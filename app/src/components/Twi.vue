@@ -1,6 +1,8 @@
-<style scoped>
+<style>
 #webview {
- height: 100%;
+ -webkit-app-region: no-drag;
+
+ height: calc(100% - 24px);
  width: 100%;
 }
 </style>
@@ -101,9 +103,6 @@
               display: none;
             }
             /* tweet */
-            div[data-testid="UserCell"] {
-              display: none !important;
-            }
             textarea[data-testid="tweet-textarea"]::-webkit-input-placeholder {
               opacity: 0;
             }

@@ -1,22 +1,29 @@
 <style>
-  * {
-    margin: 0;
-    padding: 0;
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
   }
 
   html,
   body {
-   height: 100%;
-   width: 100%;
+    -webkit-app-region: drag;
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   }
 
   body {
-   display: flex;
-   flex-direction: column;
-   flex-wrap: nowrap;
-   justify-content: flex-start;
-   align-items: stretch;
-   align-content: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    border: 1px solid #ddd;
   }
 </style>
 

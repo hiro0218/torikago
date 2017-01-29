@@ -27,7 +27,9 @@ function createWindow () {
     height: 600,
     minWidth: 340,
     maxWidth: 600,
-    resizable: true
+    resizable: true,
+    titleBarStyle: 'hidden-inset',
+    frame: false
   })
 
   mainWindow.once('ready-to-show', () => { mainWindow.show(); })
