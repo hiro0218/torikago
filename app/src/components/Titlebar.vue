@@ -4,7 +4,8 @@
   -webkit-user-select: none;
 
   width: 100%;
-  height: 24px;
+  height: 32px;
+  background: #fff;
 }
 </style>
 
