@@ -35,11 +35,13 @@ module.exports = {
             buttons: []
           })
         }
-      }, {
-        label: 'Exit',
+      },
+      { type: 'separator' },
+      {
+        label: 'Quit',
         accelerator: 'Cmd+Q',
         click: function (item, focusedWindow) {
-          focusedWindow.close();
+          app.quit();
         }
       }]
     }, {
