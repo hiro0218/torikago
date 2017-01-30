@@ -100,6 +100,16 @@ module.exports = {
         }
       }]
     }, {
+      label: 'Mode',
+      submenu: [{
+        label: 'Grayscale',
+        type: 'checkbox',
+        checked: document.body.className.match(/grayscale/),
+        click: function () {
+          document.body.classList.toggle('grayscale');
+        }
+      }]
+    }, {
       label: 'Window',
       submenu: [{
         label: 'Reload',

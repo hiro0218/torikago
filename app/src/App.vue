@@ -24,7 +24,13 @@
     align-items: stretch;
     align-content: stretch;
     border: 1px solid #ddd;
+
   }
+
+  .grayscale {
+    filter: grayscale(100%);
+  }
+
 </style>
 
 <template>
