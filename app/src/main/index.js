@@ -21,7 +21,10 @@ function createWindow () {
     maxWidth: 600,
     resizable: true,
     titleBarStyle: 'hidden-inset',
-    frame: false
+    frame: false,
+    webPreferences: {
+      experimentalFeatures: true
+    }
   })
 
   mainWindow.once('ready-to-show', () => { mainWindow.show(); })

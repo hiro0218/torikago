@@ -27,8 +27,14 @@
 
   }
 
-  .grayscale {
-    filter: grayscale(100%);
+  .overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+  }
+  .grayscale .overlay {
+    backdrop-filter: grayscale(100%);
   }
 
 </style>

@@ -1,15 +1,23 @@
 <style>
-#webview {
+.twi-container {
  -webkit-app-region: no-drag;
 
  height: calc(100% - 24px);
  width: 100%;
 }
+
+#webview {
+  height: 100%;
+  width: 100%;
+}
 </style>
 
 <template>
-  <webview id="webview"
-           useragent="Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.86 Mobile/14A403 Safari/601.1.46"></webview>
+  <div class="twi-container">
+    <div class="overlay"></div>
+    <webview id="webview"
+             useragent="Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.86 Mobile/14A403 Safari/601.1.46"></webview>
+  </div>
 </template>
 
 <script>
