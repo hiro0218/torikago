@@ -27,7 +27,7 @@
       Twi
     },
     mounted() {
-      var menu = require('../../modules/menu.js');
+      var menu = require('./modules/menu.js');
       var twi = this.$refs.twi;
       menu.goBack = function() { twi.setMenuGoBack() };
       menu.goForward = function() { twi.setMenuGoForward() };

@@ -6,7 +6,7 @@ const Menu = remote.require('electron').Menu;
 const dialog = remote.require('electron').dialog;
 // const shell = remote.shell;
 const nativeImage = remote.require('electron').nativeImage;
-const pkg = require('../package.json');
+const pkg = require('../../../../package.json');
 
 module.exports = {
   menubar: [],
