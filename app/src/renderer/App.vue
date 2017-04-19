@@ -24,8 +24,6 @@
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
-    border: 1px solid #ddd;
-
   }
 
   .overlay {
