@@ -115,6 +115,19 @@
             html {
               font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", sans-serif !important;
             }
+            /* header */
+            header[role="banner"] {
+              display: none !important;
+            }
+            [data-testid="fab-tweet"] {
+              border-radius: .25rem !important;
+              box-shadow: none !important;
+              opacity: .1;
+              transition: opacity .2s;
+            }
+            [data-testid="fab-tweet"]:hover {
+              opacity: 1;
+            }
             /* tweet */
             textarea[data-testid="tweet-textarea"]::-webkit-input-placeholder {
               opacity: 0;
