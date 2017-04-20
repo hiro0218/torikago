@@ -57,20 +57,29 @@
         var webview = document.getElementById('webview');
 
         switch (page) {
+          case 0:
+            // ACCOUNT
+            webview.executeJavaScript("document.querySelectorAll('[data-testid=loggedInUserLink]')[0].click()");
+            break;
           case 1:
-            webview.src = PAGE.HOME;
+            // HOME
+            webview.executeJavaScript("document.querySelectorAll('[data-testid=homeLink]')[0].click()");
             break;
           case 2:
-            webview.src = PAGE.NOTICE;
+            // NOTICE
+            webview.executeJavaScript("document.querySelectorAll('[data-testid=notificationsLink]')[0].click()");
             break;
           case 3:
-            webview.src = PAGE.DM;
+            // DM
+            webview.executeJavaScript("document.querySelectorAll('[data-testid=directMessagesLink]')[0].click()");
             break;
           case 4:
-            webview.src = PAGE.SEARCH;
+            // SEARCH
+            webview.executeJavaScript("document.querySelectorAll('[data-testid=searchLink]')[0].click()");
             break;
           case 5:
-            webview.src = PAGE.TWEET;
+            // TWEET
+            webview.executeJavaScript("document.querySelectorAll('[data-testid=fab-tweet]')[0].click()");
             break;
           default:
             webview.src = PAGE.DEFAULT;
@@ -104,11 +113,7 @@
         webview.addEventListener('did-finish-load', function() {
           this.insertCSS(`
             html {
-              font-family: -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
-              -webkit-font-smoothing: antialiased;
-            }
-            header[role=banner] > div:first-of-type:not(:only-of-type) {
-              display: none;
+              font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", sans-serif !important;
             }
             /* tweet */
             textarea[data-testid="tweet-textarea"]::-webkit-input-placeholder {

@@ -72,22 +72,34 @@ module.exports = {
       },
       { type: 'separator' },
       {
+        label: 'Account',
+        accelerator: 'Cmd+0',
+        click: function (item, focusedWindow) {
+          self.goPage(0);
+        }
+      },
+      { type: 'separator' },
+      {
         label: 'Home',
+        accelerator: 'Cmd+1',
         click: function (item, focusedWindow) {
           self.goPage(1);
         }
       }, {
         label: 'Notifications',
+        accelerator: 'Cmd+2',
         click: function (item, focusedWindow) {
           self.goPage(2);
         }
       }, {
         label: 'Direct Message',
+        accelerator: 'Cmd+3',
         click: function (item, focusedWindow) {
           self.goPage(3);
         }
       }, {
         label: 'Search',
+        accelerator: 'Cmd+4',
         click: function (item, focusedWindow) {
           self.goPage(4);
         }
@@ -95,6 +107,7 @@ module.exports = {
       { type: 'separator' },
       {
         label: 'Tweet',
+        accelerator: 'Cmd+5',
         click: function (item, focusedWindow) {
           self.goPage(5);
         }
